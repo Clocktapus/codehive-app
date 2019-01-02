@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Electron Editor</title>
+    <link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div id="titlebar">
+			<button id="save">Save</button>
+			<div class="dropdown">
+				<button onclick="dropDown();" class="dropbtn">Language</button>
+				<div id="dropdown-content" class="dropdown-content">
+					<input type="text" placeholder="Search.." id="dropdownInput" onkeyup="filterFunction();"></input>
+					<a href="#" onclick="changeLanguage('plaintext');">plaintext</a>
+					<a href="#" onclick="changeLanguage('typescript');">typescript</a>
+					<a href="#" onclick="changeLanguage('javascript');">javascript</a>
+					<a href="#" onclick="changeLanguage('json');">json</a>
+					<a href="#" onclick="changeLanguage('bat');">bat</a>
+					<a href="#" onclick="changeLanguage('coffeescript');">coffeescript</a>
+					<a href="#" onclick="changeLanguage('c');">c</a>
+					<a href="#" onclick="changeLanguage('cpp');">cpp</a>
+					<a href="#" onclick="changeLanguage('csharp');">csharp</a>
+					<a href="#" onclick="changeLanguage('dockerfile');">dockerfile</a>
+					<a href="#" onclick="changeLanguage('fsharp');">fsharp</a>
+					<a href="#" onclick="changeLanguage('go');">go</a>
+					<a href="#" onclick="changeLanguage('handlebars');">handlebars</a>
+					<a href="#" onclick="changeLanguage('html');">html</a>
+					<a href="#" onclick="changeLanguage('ini');">ini</a>
+					<a href="#" onclick="changeLanguage('jade');">jade</a>
+					<a href="#" onclick="changeLanguage('java');">java</a>
+					<a href="#" onclick="changeLanguage('lua');">lua</a>
+					<a href="#" onclick="changeLanguage('markdown');">markdown</a>
+					<a href="#" onclick="changeLanguage('objective-c');">objective-c</a>
+					<a href="#" onclick="changeLanguage('postiats');">postiats</a>
+					<a href="#" onclick="changeLanguage('php');">php</a>
+					<a href="#" onclick="changeLanguage('powershell');">powershell</a>
+					<a href="#" onclick="changeLanguage('python');">python</a>
+					<a href="#" onclick="changeLanguage('r');">r</a>
+					<a href="#" onclick="changeLanguage('razor');">razor</a>
+					<a href="#" onclick="changeLanguage('ruby');">ruby</a>
+					<a href="#" onclick="changeLanguage('swift');">swift</a>
+					<a href="#" onclick="changeLanguage('sql');">sql</a>
+					<a href="#" onclick="changeLanguage('vb');">vb</a>
+					<a href="#" onclick="changeLanguage('xml');">xml</a>
+					<a href="#" onclick="changeLanguage('less');">less</a>
+					<a href="#" onclick="changeLanguage('scss');">scss</a>
+					<a href="#" onclick="changeLanguage('css');">css</a>
+					<a href="#" onclick="changeLanguage('yaml');">yaml</a>
+				</div>
+			</div>
+		</div>
+		<div id="container"></div>
+	</body>
+	<script>require('./renderer.js')</script>
+	<!-- <script>require('./userinterface.js')</script> -->
+	<script src="ui.js"></script>
+</html>

@@ -1,7 +1,9 @@
 var x = require('./renderer.js');
 
+/* Code for language dropdown */
 function changeLanguage(language) {
   // Set the model language
+  document.getElementById("dropdown-button").innerText = language;
   x.monaco.editor.setModelLanguage(x.editor.getModel(), language);
 }
 
@@ -14,7 +16,7 @@ function filterFunction() {
   for (i = 0; i < a.length; i++) {
     txtValue = a[i].textContent || a[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
+      a[i].style.display = "block";
     } else {
       a[i].style.display = "none";
     }

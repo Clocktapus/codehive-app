@@ -2,19 +2,16 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-#container {
-  height: 100vh;
-  width: 100vw;
-}
-
-.monaco-editor {
   height: 100%;
-  width: 100%;
 }
 
-#titlebar {
+#wrapper {
+  min-height: 100%;
+  position: relative;
+  background-color: #1e1e1e;
+}
+
+#topbar {
   width: 100vw;
   height: 40px;
   background-color: #1e1e1e;
@@ -24,19 +21,38 @@ body {
   padding: 8px 0 0 10px;
 }
 
+#container {
+  height: 100vh;
+  width: 100vw;
+  padding-bottom: 70px;
+}
+
+.monaco-editor {
+  height: 100%;
+  width: 100%;
+}
+
+#bottombar {
+  width: 100%;
+  height: 30px;
+  /* -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag; */
+  position: absolute;
+  background: #292E3B;
+  bottom:0;
+  margin-bottom: 118px;
+  float: right;
+}
+
 button {
-    background-color: #569CD6; /* Green */
     border: none;
-    color: white;
-    padding: 2px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
 }
 
 button:hover {
-  background-color: #76afde;
   cursor: pointer;
 }
 
@@ -44,17 +60,34 @@ button:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  float: right;
+}
+
+.bottombar-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #96ABBA;
+  background-color: transparent;
+}
+
+#linend-btn {
+  float: right;
 }
 
 #dropdownInput {
   border-box: box-sizing;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
+  background-image: url('icons/searchicon.png');
+  background-position: 12px 12px;
   background-repeat: no-repeat;
   font-size: 16px;
   padding: 14px 20px 12px 45px;
+  width: 100px;
   border: none;
   border-bottom: 1px solid #ddd;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 #dropdownInput:focus {outline: 3px solid #ddd;}
@@ -64,9 +97,12 @@ button:hover {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  bottom: 25px;
+  /* padding-left: 550px; */
+  background-clip: content-box;
 }
 
 /* Links inside the dropdown */
@@ -74,7 +110,9 @@ button:hover {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  display: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
 }
 
 /* Change color of dropdown links on hover */

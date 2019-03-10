@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Electron Editor</title>
-    <link rel="stylesheet" href="./style.css">
+		<title>Live Code Editor</title>
+    <link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	</head>
@@ -57,12 +57,23 @@
 				</div>
 				<div class="indent">
 					<div class="dropdown">
-						<button onclick="dropDownIndent();" id="indent-button" class="bottombar-btn">CRLF</button>
+						<button onclick="dropDownIndent();" id="indent-button" class="bottombar-btn">Spaces: 4</button>
 						<div id="dropdownIndent-content" class="dropdown-content">
-							<input type="text" placeholder="Search.." id="dropdownIndent-input" onkeyup="filterFunctionIndent();"></input>
+							<input type="text" placeholder="Tab width..." id="dropdownIndent-input"></input>
 						</div>
+					</div>
 				</div>
-			</div>
+				<div id="line-count">
+					<a id="line-count-text">0 Lines</a>
+				</div>
+				<div class="file-info">
+					<div class="info" id="file-path">
+						<a id="filepath-text">untitled</a>
+					</div>
+					<div class="info" id="cursor-position">
+						<a id="cursorpos-text">Line 0, Column 0</a>
+					</div>
+				</div>
 		</div>
 	</body>
 	<script>require('./renderer.js')</script>

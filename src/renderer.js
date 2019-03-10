@@ -24,9 +24,10 @@ loader().then((monaco) => {
 
     console.log(monaco);
     console.log(editor);
-    
+
     module.exports.monaco = monaco;
     module.exports.editor = editor;
+    module.exports.fileManager = fileManager;
     // module.exports = {
     //   monaco: monaco,
     //   editor: editor

@@ -5,12 +5,15 @@ class FileManager {
     constructor({ editor, monaco }) {
       this.editor = editor;
       this.monaco = monaco;
+      this.filepath = "untitled";
 
       // When we receive a 'open-file' message, open the file
       ipcRenderer.on('open-file', (e, url) => this.openFile(url));
 
+
       document.querySelector('#save').onclick = () => this.saveFile();
     }
+
 
     openFile(url) {
       // fs.readFile doesn't know what `file://` means
@@ -19,6 +22,9 @@ class FileManager {
       fs.readFile(parsedUrl, 'utf-8', (err, data) => {
         this.editor.setModel(this.monaco.editor.createModel(data, 'javascript'));
       });
+
+      this.filepath = parsedUrl;
+      document.querySelector('#filepath-text').innerText = parsedUrl;
     }
 
     saveFile() {
@@ -33,6 +39,8 @@ class FileManager {
         });
 
         fs.writeFile(filename, data, 'utf-8');
+        this.filepath = filename;
+        document.querySelector('#filepath-text').innerText = filename;
       });
     }
 

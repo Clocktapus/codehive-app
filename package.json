@@ -50,9 +50,12 @@
         }
     },
     "dependencies": {
+        "electron": "^4.0.1",
         "electron-compile": "^6.1.2",
         "electron-reload": "^1.4.0",
         "monaco-loader": "^0.8.2",
+        "node-gyp": "^3.8.0",
+        "on-change": "^1.0.0",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-router-dom": "^4.3.1"
@@ -61,7 +64,7 @@
         "babel-plugin-transform-async-to-generator": "^6.22.0",
         "babel-preset-env": "^1.1.10",
         "babel-preset-react": "^6.23.0",
-        "electron-forge": "^3.0.5",
+        "electron-forge": "^3.2.0",
         "electron-prebuilt-compile": "1.4.15",
         "eslint": "^3.16.1",
         "eslint-config-airbnb": "^14.1.0",
